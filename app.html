@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo Mata Mosquito</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+
+		<script type="text/javascript" src="js/jogo.js"></script>
+	</head>
+	
+	<body onresize="tamanhoTelaJogo()">
+
+		<div class="painel">
+			<div class="vidas">
+				<img id="v1" src="img/coracao_cheio.png" />
+				<img id="v2" src="img/coracao_cheio.png" />
+				<img id="v3" src="img/coracao_cheio.png" />
+				<img id="v4" src="img/coracao_cheio.png" />
+				<img id="v5" src="img/coracao_cheio.png" />
+			</div>
+
+			<div class="cronometro">
+				Tempo Restante: <span id="cronometro"></span>
+			</div>
+			
+			<div class="mosqmorto">
+				Mosquitos Mortos: <span id="mosqmorto"></span>
+			</div>
+		</div>
+		
+		<script> 
+
+			document.getElementById('cronometro').innerHTML = tempo;
+			document.getElementById('mosqmorto').innerHTML = mosqmorto;
+
+			var criarMosquito = setInterval(function(){
+				posicaoMosquitos();
+			}, velocidadeAparicaoMosquito);
+			
+		</script>
+	</body>
+</html>
